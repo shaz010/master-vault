@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Master Vault — Shaz & Claude</title>
+<style>
+:root{--bg:#08080a;--bg2:#0d0d10;--card:#141417;--border:#26262b;--gold:#FFB800;--green:#34d36a;--blue:#6aa9ff;--purple:#b98cff;--ink:#f1f1f3;--mut:#9a9aa3;--mut2:#6f6f78}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;padding:32px 24px}
+.wrap{max-width:900px;margin:0 auto}
+h1{font-size:28px;font-weight:800;color:var(--gold);margin-bottom:4px}
+.sub{color:var(--mut);font-size:14px;margin-bottom:32px}
+h2{font-size:16px;font-weight:700;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin:32px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+h3{font-size:14px;font-weight:700;color:var(--blue);margin:16px 0 6px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;margin-bottom:12px}
+.row{display:flex;gap:8px;align-items:baseline;margin-bottom:6px;flex-wrap:wrap}
+.label{font-size:12px;color:var(--mut2);min-width:130px;flex-shrink:0}
+.val{font-size:13.5px;color:var(--ink)}
+.val a{color:var(--blue);text-decoration:none}
+.val a:hover{text-decoration:underline}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;margin-right:4px}
+.tag-live{background:rgba(52,211,106,.15);color:var(--green);border:1px solid rgba(52,211,106,.3)}
+.tag-pending{background:rgba(255,184,0,.12);color:var(--gold);border:1px solid rgba(255,184,0,.3)}
+.tag-incomplete{background:rgba(185,140,255,.12);color:var(--purple);border:1px solid rgba(185,140,255,.3)}
+.note{font-size:12.5px;color:var(--mut);margin-top:8px;padding:10px 12px;background:rgba(255,255,255,.03);border-radius:8px;border-left:2px solid var(--border)}
+.updated{font-size:11px;color:var(--mut2);margin-top:32px;text-align:right}
+code{font-family:'SF Mono',Monaco,monospace;font-size:12.5px;background:#1a1a20;padding:2px 6px;border-radius:5px;color:var(--gold)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>✨ Master Vault</h1>
+<p class="sub">Shaz & Claude — everything in one place. Updated August 2026.</p>
+
+<!-- ── PROJECTS ─────────────────────────────────── -->
+<h2>Projects</h2>
+
+<div class="card">
+  <h3>Your Salon Pro <span class="tag tag-pending">App Store — Waiting for Review</span></h3>
+  <div class="row"><span class="label">Live URL</span><span class="val"><a href="https://getcommissionpro.com/salon.html">getcommissionpro.com/salon.html</a></span></div>
+  <div class="row"><span class="label">GitHub Repo</span><span class="val"><a href="https://github.com/shaz010/mgm-studio">shaz010/mgm-studio</a></span></div>
+  <div class="row"><span class="label">Files</span><span class="val"><code>salon.html</code> (shell) · <code>app.html</code> (Earnings v2.36) · <code>appt.html</code> (Appointments v6.13) · <code>book.html</code> · <code>sw.js</code></span></div>
+  <div class="row"><span class="label">Pricing</span><span class="val">$5/month · 21-day free trial</span></div>
+  <div class="row"><span class="label">Stripe Link</span><span class="val"><a href="https://buy.stripe.com/aFa9AT5oW6D04z9dCEfw402">buy.stripe.com/aFa9AT…402</a></span></div>
+  <div class="row"><span class="label">Landing Page</span><span class="val">landing.html (deploy as index.html)</span></div>
+  <div class="row"><span class="label">Domain Renewal</span><span class="val">~June 2027 · Namecheap</span></div>
+  <div class="note">Architecture: "One Entrance, Two Rooms" — salon.html shell loads app.html + appt.html in a single iframe. Shared localStorage. noir theme. Trial unlock codes: PRISM01–10 · GLOSS11–20 · SHEEN21–30. Founder codes: VELVET01–GILT20.</div>
+</div>
+
+<div class="card">
+  <h3>TaxRight <span class="tag tag-live">Live</span></h3>
+  <div class="row"><span class="label">Live URL</span><span class="val"><a href="https://shaz010.github.io/taxright/">shaz010.github.io/taxright/</a></span></div>
+  <div class="row"><span class="label">GitHub Repo</span><span class="val"><a href="https://github.com/shaz010/taxright">shaz010/taxright</a></span></div>
+  <div class="row"><span class="label">Files</span><span class="val"><code>index.html</code> (b26) · <code>sw.js</code> (taxright-v26) · <code>landing.html</code></span></div>
+  <div class="row"><span class="label">Tax Year</span><span class="val">2025 (current)</span></div>
+  <div class="row"><span class="label">Pricing</span><span class="val">Free — no backend, no server</span></div>
+  <div class="note">Free US federal tax calculator PWA. Single-file HTML. Landing page at shaz010.github.io (user site repo). SEO + Open Graph + Schema.org added Aug 2026.</div>
+</div>
+
+<!-- ── APP STORE STATUS ──────────────────────────── -->
+<h2>App Store Status</h2>
+
+<div class="card">
+  <h3>Apple App Store <span class="tag tag-pending">Waiting for Review</span></h3>
+  <div class="row"><span class="label">App Name</span><span class="val">Your Salon Pro</span></div>
+  <div class="row"><span class="label">Bundle ID</span><span class="val"><code>com.getcommissionpro.yoursalon</code></span></div>
+  <div class="row"><span class="label">Apple ID</span><span class="val">6796050684</span></div>
+  <div class="row"><span class="label">SKU</span><span class="val">yoursalon-001</span></div>
+  <div class="row"><span class="label">Developer Account</span><span class="val">Shahbaz Mirshahi · shahbazmirshahi@mac.com</span></div>
+  <div class="row"><span class="label">Fee Paid</span><span class="val">$99/year</span></div>
+  <div class="row"><span class="label">Expedite Request</span><span class="val">Sent Aug 1, 2026</span></div>
+  <div class="row"><span class="label">Console</span><span class="val"><a href="https://appstoreconnect.apple.com">appstoreconnect.apple.com</a></span></div>
+  <div class="row"><span class="label">Contact Apple</span><span class="val"><a href="https://developer.apple.com/contact/app-store">developer.apple.com/contact/app-store</a></span></div>
+</div>
+
+<div class="card">
+  <h3>Google Play <span class="tag tag-incomplete">Account Setup Incomplete</span></h3>
+  <div class="row"><span class="label">Account ID</span><span class="val">4835349469847474845</span></div>
+  <div class="row"><span class="label">Developer Name</span><span class="val">Your Salon</span></div>
+  <div class="row"><span class="label">Email</span><span class="val">chabokchamejun@gmail.com</span></div>
+  <div class="row"><span class="label">Fee Paid</span><span class="val">$25 one-time</span></div>
+  <div class="row"><span class="label">Blocker</span><span class="val">Android device verification required (Play Console app on Android)</span></div>
+  <div class="row"><span class="label">Support Ticket</span><span class="val">Ref: 1-6612000040826 (filed Aug 1, 2026)</span></div>
+  <div class="row"><span class="label">Console</span><span class="val"><a href="https://play.google.com/console">play.google.com/console</a></span></div>
+</div>
+
+<!-- ── ACCOUNTS & SERVICES ───────────────────────── -->
+<h2>Accounts & Services</h2>
+
+<div class="card">
+  <div class="row"><span class="label">GitHub</span><span class="val"><a href="https://github.com/shaz010">github.com/shaz010</a></span></div>
+  <div class="row"><span class="label">Stripe</span><span class="val"><a href="https://dashboard.stripe.com">dashboard.stripe.com</a> · Account: CommissionPro</span></div>
+  <div class="row"><span class="label">Namecheap</span><span class="val"><a href="https://namecheap.com">namecheap.com</a> · getcommissionpro.com · renew ~June 2027</span></div>
+  <div class="row"><span class="label">Apple Developer</span><span class="val"><a href="https://developer.apple.com">developer.apple.com</a> · renews annually</span></div>
+  <div class="row"><span class="label">App Store Connect</span><span class="val"><a href="https://appstoreconnect.apple.com">appstoreconnect.apple.com</a></span></div>
+</div>
+
+<!-- ── SHAZ'S BACKGROUND ─────────────────────────── -->
+<h2>Background</h2>
+
+<div class="card">
+  <div class="row"><span class="label">Trades</span><span class="val">Hair stylist (~20 yrs) · Scientific optics manufacturer (19 yrs)</span></div>
+  <div class="row"><span class="label">Optics speciality</span><span class="val">Flats, Brewsters, prisms, lenses — scientific not ophthalmic</span></div>
+  <div class="row"><span class="label">Location</span><span class="val">23330 Moulton Parkway, Laguna Hills, CA 92653</span></div>
+  <div class="row"><span class="label">Contact</span><span class="val">chabokchamejun@gmail.com · shahbazmirshahi@mac.com</span></div>
+  <div class="note">Eye strain — keep Claude responses short and scannable. One clear action at a time.</div>
+</div>
+
+<!-- ── WORKING WITH CLAUDE ───────────────────────── -->
+<h2>Working with Claude</h2>
+
+<div class="card">
+  <div class="note">Claude starts every session with no memory. Paste this vault link or share this file at the start of each session to get up to speed instantly. The skill "your-salon" is installed and covers all app.html / appt.html / salon.html conventions. Always bump VERSION when editing app files. Validate JS before sending. Upload one file at a time to GitHub — never use zip.</div>
+</div>
+
+<p class="updated">Last updated: August 1, 2026</p>
+</div>
+</body>
+</html>
