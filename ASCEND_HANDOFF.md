@@ -1,5 +1,5 @@
 # Ascend App — Voice Recording Handoff
-Last updated: 2026-10-07
+Last updated: 2026-10-07 (en-US fix)
 
 ## Task
 Fix Farsi voice recording pipeline:
@@ -15,7 +15,7 @@ Fix Farsi voice recording pipeline:
 - ✅ `expo-speech-recognition` is installed and imported (v57.1.0)
 - ✅ Brace balance verified: {=1893, }=1893, diff=0 — file is valid TypeScript
 
-## CURRENT CODE STATE (after engine swap — NOT yet built/tested)
+## CURRENT CODE STATE (en-US fix applied — NOT yet tested)
 
 ### Recording engine: expo-speech-recognition (NOT expo-audio)
 The entire recording engine was swapped from `expo-audio`'s `useAudioRecorder` to `expo-speech-recognition`'s `ExpoSpeechRecognitionModule` because expo-audio's AVAudioRecorder produces silent audio on iOS (AVAudioRecorder.record() return value not checked in Swift — silent failure).
@@ -34,7 +34,7 @@ const startRecording = async () => {
     const perm = await ExpoSpeechRecognitionModule.requestPermissionsAsync();
     if (!perm.granted) { setTrOutput('Permission denied'); isRecordingRef.current = false; isTranscribingRef.current = false; return; }
     ExpoSpeechRecognitionModule.start({
-      lang: trSourceLang === 'fa' ? 'fa-IR' : trSourceLang,
+      lang: 'en-US',  // SR captures audio only; Whisper handles Farsi
       interimResults: true,
       continuous: true,
       recordingOptions: { persist: true, outputFileName: 'speech.wav', outputSampleRate: 16000, outputEncoding: 'pcmFormatInt16' },
@@ -102,7 +102,8 @@ useSpeechRecognitionEvent('audioend', async (event: any) => {
 | 4 | `fetch + FormData` with `{ uri, type, name }` | "Error: Unsupported FormDataPart implementation" — RN New Arch |
 | 5 | Bad Python script deleted startRecording + stopAndTranscribe | Functions missing, app broken |
 | 6 | Restored functions + WAV/LINEARPCM via expo-audio | Root cause still expo-audio |
-| 7 | ENGINE SWAP: expo-speech-recognition, persist:true WAV | NOT YET BUILT/TESTED |
+| 7 | ENGINE SWAP: expo-speech-recognition, persist:true WAV, lang: fa-IR | SR error: fa-IR not supported by SFSpeechRecognizer |
+| 8 | Changed lang to en-US — SR captures audio only, Whisper handles Farsi | NOT YET TESTED |
 
 ## Root Cause
 expo-audio's AVAudioRecorder.record() return value NOT checked in Swift.
